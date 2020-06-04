@@ -1,0 +1,11 @@
+framework module CalendarHeatmap {
+  umbrella header "CalendarHeatmap-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module CalendarHeatmap.Swift {
+    header "CalendarHeatmap-Swift.h"
+    requires objc
+}

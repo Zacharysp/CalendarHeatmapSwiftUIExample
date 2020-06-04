@@ -7,15 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B654D53C24887065000B6F79 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654D53B24887065000B6F79 /* ColorData.swift */; };
 		B68C4AAA248710B700943D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C4AA9248710B700943D11 /* AppDelegate.swift */; };
 		B68C4AAC248710B700943D11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C4AAB248710B700943D11 /* SceneDelegate.swift */; };
 		B68C4AAE248710B700943D11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C4AAD248710B700943D11 /* ContentView.swift */; };
 		B68C4AB0248710BA00943D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68C4AAF248710BA00943D11 /* Assets.xcassets */; };
 		B68C4AB3248710BA00943D11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68C4AB2248710BA00943D11 /* Preview Assets.xcassets */; };
 		B68C4AB6248710BA00943D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68C4AB4248710BA00943D11 /* LaunchScreen.storyboard */; };
+		B68C4ACA2487547800943D11 /* CalendarHeatmap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68C4AC82487547500943D11 /* CalendarHeatmap.framework */; };
+		B68C4ACB2487547800943D11 /* CalendarHeatmap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B68C4AC82487547500943D11 /* CalendarHeatmap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B68C4ACD2487576800943D11 /* heatmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = B68C4ACC2487576800943D11 /* heatmap.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B68C4AC5248753B200943D11 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B68C4ACB2487547800943D11 /* CalendarHeatmap.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B654D53B24887065000B6F79 /* ColorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorData.swift; sourceTree = "<group>"; };
 		B68C4AA6248710B700943D11 /* CalendarHeatmapSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarHeatmapSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68C4AA9248710B700943D11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68C4AAB248710B700943D11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +43,8 @@
 		B68C4AB2248710BA00943D11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B68C4AB5248710BA00943D11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B68C4AB7248710BA00943D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B68C4AC82487547500943D11 /* CalendarHeatmap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarHeatmap.framework; path = Frameworks/CalendarHeatmap.framework; sourceTree = "<group>"; };
+		B68C4ACC2487576800943D11 /* heatmap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = heatmap.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68C4ACA2487547800943D11 /* CalendarHeatmap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				B68C4AA8248710B700943D11 /* CalendarHeatmapSwiftUI */,
-				B68C4AA7248710B700943D11 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,18 +72,23 @@
 				B68C4AA6248710B700943D11 /* CalendarHeatmapSwiftUI.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		B68C4AA8248710B700943D11 /* CalendarHeatmapSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				B68C4ACC2487576800943D11 /* heatmap.plist */,
+				B68C4AC82487547500943D11 /* CalendarHeatmap.framework */,
 				B68C4AA9248710B700943D11 /* AppDelegate.swift */,
 				B68C4AAB248710B700943D11 /* SceneDelegate.swift */,
+				B654D53B24887065000B6F79 /* ColorData.swift */,
 				B68C4AAD248710B700943D11 /* ContentView.swift */,
 				B68C4AAF248710BA00943D11 /* Assets.xcassets */,
 				B68C4AB4248710BA00943D11 /* LaunchScreen.storyboard */,
 				B68C4AB7248710BA00943D11 /* Info.plist */,
 				B68C4AB1248710BA00943D11 /* Preview Content */,
+				B68C4AA7248710B700943D11 /* Products */,
 			);
 			path = CalendarHeatmapSwiftUI;
 			sourceTree = "<group>";
@@ -85,6 +111,7 @@
 				B68C4AA2248710B700943D11 /* Sources */,
 				B68C4AA3248710B700943D11 /* Frameworks */,
 				B68C4AA4248710B700943D11 /* Resources */,
+				B68C4AC5248753B200943D11 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,7 @@
 				B68C4AB6248710BA00943D11 /* LaunchScreen.storyboard in Resources */,
 				B68C4AB3248710BA00943D11 /* Preview Assets.xcassets in Resources */,
 				B68C4AB0248710BA00943D11 /* Assets.xcassets in Resources */,
+				B68C4ACD2487576800943D11 /* heatmap.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +177,7 @@
 				B68C4AAA248710B700943D11 /* AppDelegate.swift in Sources */,
 				B68C4AAC248710B700943D11 /* SceneDelegate.swift in Sources */,
 				B68C4AAE248710B700943D11 /* ContentView.swift in Sources */,
+				B654D53C24887065000B6F79 /* ColorData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +315,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarHeatmapSwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = J7KASTD2Y4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CalendarHeatmapSwiftUI/frameworks",
+					"$(PROJECT_DIR)/CalendarHeatmapSwiftUI/Frameworks",
+				);
 				INFOPLIST_FILE = CalendarHeatmapSwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,8 +340,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarHeatmapSwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = J7KASTD2Y4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CalendarHeatmapSwiftUI/frameworks",
+					"$(PROJECT_DIR)/CalendarHeatmapSwiftUI/Frameworks",
+				);
 				INFOPLIST_FILE = CalendarHeatmapSwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
