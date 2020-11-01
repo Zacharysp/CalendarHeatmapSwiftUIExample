@@ -11,10 +11,10 @@ import CalendarHeatmap
 
 struct ContentView: View {
     
-    @ObservedObject var colorData = ColorData()
+    @State var colorData = ColorData()
     
     var body: some View {
-        CalendarHeatmapWrapper(colorData: colorData).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        CalendarHeatmapWrapper(colorData: $colorData).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
     
     private func readHeatmap() -> [String: Int]? {
@@ -31,10 +31,8 @@ struct ContentView_Previews: PreviewProvider {
 
 struct CalendarHeatmapWrapper: UIViewRepresentable {
     
-    @ObservedObject var colorData: ColorData
-    
-    typealias UIViewType = UIView
-    
+    @Binding var colorData: ColorData
+
     let calendarHeatmap: CalendarHeatmap = {
         var config = CalendarHeatmapConfig()
         config.backgroundColor = UIColor(named: "background")!
@@ -50,32 +48,46 @@ struct CalendarHeatmapWrapper: UIViewRepresentable {
         config.weekDayFont = UIFont.systemFont(ofSize: 12)
         config.weekDayWidth = 30
         config.weekDayColor = UIColor(named: "text")!
-        
         let calendar = CalendarHeatmap(config: config, startDate: Date(2019, 5, 1), endDate: Date(2020, 3, 23))
         return calendar
     }()
     
     func makeUIView(context: Context) -> UIView {
-        calendarHeatmap.delegate = self
+        calendarHeatmap.delegate = context.coordinator
         return calendarHeatmap
     }
     
     func updateUIView(_ uiView: UIView, context: Context) {}
+
+    func makeCoordinator() -> Coordinator { Coordinator(colorData: $colorData) }
+
 }
 
-extension CalendarHeatmapWrapper: CalendarHeatmapDelegate {
-    
+
+class Coordinator: NSObject, CalendarHeatmapDelegate {
+
+    @Binding var colorData: ColorData
+
+    init(colorData: Binding<ColorData>) {
+        _colorData = colorData
+    }
+
+    // MARK: - CalendarHeatmapDelegate
+
     func colorFor(dateComponents: DateComponents) -> UIColor {
         guard let year = dateComponents.year,
-            let month = dateComponents.month,
-            let day = dateComponents.day else { return .clear}
+              let month = dateComponents.month,
+              let day = dateComponents.day else { return .clear}
         let dateString = "\(year).\(month).\(day)"
         return colorData.data?[dateString] ?? UIColor(named: "color6")!
     }
-    
-    func finishLoadCalendar() {}
-}
 
+    func finishLoadCalendar() {}
+
+    func didSelectedAt(dateComponents: DateComponents) {
+        print(dateComponents)
+    }
+}
 
 extension Date {
     init(_ year:Int, _ month: Int, _ day: Int) {

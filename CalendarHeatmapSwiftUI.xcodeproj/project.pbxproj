@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3DC1D81254E576500824E6A /* CalendarHeatmap in Frameworks */ = {isa = PBXBuildFile; productRef = A3DC1D80254E576500824E6A /* CalendarHeatmap */; };
 		B654D53C24887065000B6F79 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654D53B24887065000B6F79 /* ColorData.swift */; };
 		B68C4AAA248710B700943D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C4AA9248710B700943D11 /* AppDelegate.swift */; };
 		B68C4AAC248710B700943D11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C4AAB248710B700943D11 /* SceneDelegate.swift */; };
@@ -14,24 +15,8 @@
 		B68C4AB0248710BA00943D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68C4AAF248710BA00943D11 /* Assets.xcassets */; };
 		B68C4AB3248710BA00943D11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68C4AB2248710BA00943D11 /* Preview Assets.xcassets */; };
 		B68C4AB6248710BA00943D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68C4AB4248710BA00943D11 /* LaunchScreen.storyboard */; };
-		B68C4ACA2487547800943D11 /* CalendarHeatmap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68C4AC82487547500943D11 /* CalendarHeatmap.framework */; };
-		B68C4ACB2487547800943D11 /* CalendarHeatmap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B68C4AC82487547500943D11 /* CalendarHeatmap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B68C4ACD2487576800943D11 /* heatmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = B68C4ACC2487576800943D11 /* heatmap.plist */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		B68C4AC5248753B200943D11 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B68C4ACB2487547800943D11 /* CalendarHeatmap.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B654D53B24887065000B6F79 /* ColorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorData.swift; sourceTree = "<group>"; };
@@ -52,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68C4ACA2487547800943D11 /* CalendarHeatmap.framework in Frameworks */,
+				A3DC1D81254E576500824E6A /* CalendarHeatmap in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,13 +96,15 @@
 				B68C4AA2248710B700943D11 /* Sources */,
 				B68C4AA3248710B700943D11 /* Frameworks */,
 				B68C4AA4248710B700943D11 /* Resources */,
-				B68C4AC5248753B200943D11 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CalendarHeatmapSwiftUI;
+			packageProductDependencies = (
+				A3DC1D80254E576500824E6A /* CalendarHeatmap */,
+			);
 			productName = CalendarHeatmapSwiftUI;
 			productReference = B68C4AA6248710B700943D11 /* CalendarHeatmapSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -146,6 +133,9 @@
 				Base,
 			);
 			mainGroup = B68C4A9D248710B700943D11;
+			packageReferences = (
+				A3DC1D7F254E576500824E6A /* XCRemoteSwiftPackageReference "CalendarHeatmap" */,
+			);
 			productRefGroup = B68C4AA7248710B700943D11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -381,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A3DC1D7F254E576500824E6A /* XCRemoteSwiftPackageReference "CalendarHeatmap" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Zacharysp/CalendarHeatmap";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A3DC1D80254E576500824E6A /* CalendarHeatmap */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3DC1D7F254E576500824E6A /* XCRemoteSwiftPackageReference "CalendarHeatmap" */;
+			productName = CalendarHeatmap;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B68C4A9E248710B700943D11 /* Project object */;
 }
