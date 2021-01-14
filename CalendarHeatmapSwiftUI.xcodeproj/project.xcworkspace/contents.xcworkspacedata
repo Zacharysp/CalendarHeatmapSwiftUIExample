@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/zachary/Project/CalendarHeatmapSwiftUI/CalendarHeatmapSwiftUI/CalendarHeatmap.framework">
-   </FileRef>
-   <FileRef
-      location = "self:CalendarHeatmapSwiftUI.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
